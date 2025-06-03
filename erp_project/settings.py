@@ -88,6 +88,7 @@ USE_TZ = True
 
 # Statik fayllar URL va joylashuvi
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Statik fayllar qaysi papkalarda joylashganligini ko‘rsatish (agar kerak bo‘lsa)
 STATICFILES_DIRS = [
