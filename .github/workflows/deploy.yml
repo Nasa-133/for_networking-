@@ -23,6 +23,8 @@ jobs:
         ssh -o StrictHostKeyChecking=no root@142.93.249.129 << 'EOF'
           cd .. 
           cd /home/ubuntu/for_networking
+          git add . 
+          git commit -m "Deploying latest changes"
           git pull origin main
           source venv/bin/activate
           pip install -r requirements.txt
