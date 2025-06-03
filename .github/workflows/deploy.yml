@@ -23,12 +23,15 @@ jobs:
         ssh -o StrictHostKeyChecking=no root@142.93.249.129 << 'EOF'
           cd .. 
           cd /home/ubuntu/for_networking
+          sudo apt-get update
+          
           git add . 
           git commit -m "Deploying latest changes"
           git pull origin main
-          sudo apt-get update
-          pip install --upgrade pip
+          rm -rf venv
+          python3 -m venv venv
           source venv/bin/activate
+          pip install --upgrade pip
           pip install -r requirements.txt
           python3 manage.py migrate
           python3 manage.py collectstatic --noinput
