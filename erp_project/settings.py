@@ -23,7 +23,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main',  # Make sure this line exists
+    'main',  # Make sure this line exists for your app
 ]
 
 MIDDLEWARE = [
@@ -41,7 +41,7 @@ ROOT_URLCONF = 'erp_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [],  # Agar maxsus template papkalari bo'lsa shu yerga qo'shish mumkin
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -56,7 +56,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'erp_project.wsgi.application'
 
-# Database
+# Database konfiguratsiyasi - hozirda SQLite ishlatilmoqda
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -64,7 +64,7 @@ DATABASES = {
     }
 }
 
-# Password validation
+# Parol xavfsizligi uchun validatorlar
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -80,23 +80,22 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# Internationalization
+# Localization va timezone sozlamalari
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
+# Statik fayllar URL va joylashuvi
 STATIC_URL = 'static/'
 
-# Static files directories - O'zgartirildi
+# Statik fayllar qaysi papkalarda joylashganligini ko‘rsatish (agar kerak bo‘lsa)
 STATICFILES_DIRS = [
-    BASE_DIR / 'main' / 'static',  # Bu papka mavjud emas
+    BASE_DIR / 'main' / 'static',  # Agar `main/static/` papkasi mavjud bo'lsa
 ]
 
-
-# Default primary key field type
+# Django model primariy kalit turi
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Login URL
+# Login sahifasining URL manzili (masalan, foydalanuvchilarni login qilish uchun)
 LOGIN_URL = '/login/'
